@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  todoist-db:
+    image: postgres:alpine
+    restart: always
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${MIGRATION_DB_USER"]
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=todoist_db
+      - POSTGRES_USER=todoist_db_user
+      - POSTGRES_PASSWORD=todoist_db_pass
+
+volumes:
+  db-data:
+
+networks:
+  default:
+    name: "todoist_lite_service_network"

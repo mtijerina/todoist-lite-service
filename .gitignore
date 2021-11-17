@@ -1,0 +1,19 @@
+target/
+out/
+
+.DS_Store
+.calva/
+.cpcache/
+.envrc
+.lsp/
+app.jar
+pom.xml
+
+# IntelliJ
+.idea/
+todoist-lite-service.iml
+
+.nrepl-port
+
+.clj-kondo/.cache
+
